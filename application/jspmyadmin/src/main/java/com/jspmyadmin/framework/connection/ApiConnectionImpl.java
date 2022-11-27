@@ -160,6 +160,7 @@ class ApiConnectionImpl implements ApiConnection {
 
                 MysqlDataSource dataSource = new MysqlDataSource();
                 dataSource.setUseSSL(false);
+                dataSource.setServerTimezone("UTC");
                 dataSource.setURL(builder.toString());
                 dataSource.setUser(httpSession.getAttribute(Constants.SESSION_USER).toString());
                 String pass = httpSession.getAttribute(Constants.SESSION_PASS).toString();
@@ -182,6 +183,7 @@ class ApiConnectionImpl implements ApiConnection {
                 builder.append(_YEARISDATETYPE);
                 dataSource = new MysqlDataSource();
                 dataSource.setUseSSL(false);
+                dataSource.setServerTimezone("UTC");
                 dataSource.setURL(builder.toString());
                 dataSource.setUser(httpSession.getAttribute(Constants.SESSION_USER).toString());
                 pass = httpSession.getAttribute(Constants.SESSION_PASS).toString();
@@ -203,6 +205,7 @@ class ApiConnectionImpl implements ApiConnection {
                 builder.append(_YEARISDATETYPE);
                 dataSource = new MysqlDataSource();
                 dataSource.setUseSSL(false);
+                dataSource.setServerTimezone("UTC");
                 dataSource.setURL(builder.toString());
                 dataSource.setUser(ConnectionFactory.config.getUser());
                 dataSource.setPassword(ConnectionFactory.config.getPass());
